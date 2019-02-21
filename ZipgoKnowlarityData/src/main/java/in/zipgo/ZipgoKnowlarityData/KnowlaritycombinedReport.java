@@ -186,7 +186,7 @@ public class KnowlaritycombinedReport {
 
 		// Create the attachment
 		EmailAttachment attachment = new EmailAttachment();
-		attachment.setPath("/Users/prashant/Downloads/zipgo_ibd_call_logs_info-results.csv");
+		attachment.setPath("/Users/sandeshkini/Downloads/zipgo_ibd_call_logs_info-results.csv");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("zipgo_ibd_call_logs_info-results" + dateFinal + ".csv");
 
@@ -255,7 +255,7 @@ public class KnowlaritycombinedReport {
 		System.out.println("Sending attachement mail..");
 		// Create the attachment
 		EmailAttachment attachment = new EmailAttachment();
-		attachment.setPath("/Users/prashant/Downloads/zipgo_t_15145_call_logs_view-results.csv");
+		attachment.setPath("/Users/sandeshkini/Downloads/zipgo_t_15145_call_logs_view-results.csv");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("zipgo_t_15145_call_logs_view-results" + dateFinal + ".csv");
 		
