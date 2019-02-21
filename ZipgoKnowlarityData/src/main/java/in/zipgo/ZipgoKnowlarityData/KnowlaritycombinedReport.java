@@ -314,5 +314,6 @@ public class KnowlaritycombinedReport {
 				// send the email
 				email.send();
 				System.out.println("Sent"+mailSubject);
+//				commit test
 	}
 }
