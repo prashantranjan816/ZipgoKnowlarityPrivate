@@ -37,7 +37,7 @@ public class KnowlaritycombinedReport {
 	final By logout 			=By.xpath("//a[@class='ilgout']");
 	final By logoutConf 		=By.xpath("//*[@id='popup_ok']/span");
 
-	String FileLocation 		="/Users/prashant/Downloads/";
+	String FileLocation;
 	String FileName[] 			={ "zipgo_ibd_call_logs_info-results.csv", "zipgo_t_15145_call_logs_view-results.csv" };
 	String Url					="https://etsrds.knowlarity.com/";
 	String mailid 				="prashant.zipgouser@gmail.com";
@@ -60,6 +60,14 @@ public class KnowlaritycombinedReport {
 	@Test(priority = 1, invocationCount=1,enabled=true, retryAnalyzer = RetryAnalyzerCount.class)
 	public void deleteOldFile() {
 		System.out.println("deleteOldFile process started...");
+		
+//---below two lines will get universal file location independent from OS---
+		
+		String home = System.getProperty("user.home");
+		FileLocation = home+ File.separator + "Downloads"+ File.separator;
+		System.out.println(FileLocation);
+//===========================================================================		
+		
 
 		for (String fileName : FileName) {
 
@@ -186,7 +194,7 @@ public class KnowlaritycombinedReport {
 
 		// Create the attachment
 		EmailAttachment attachment = new EmailAttachment();
-		attachment.setPath("/Users/sandeshkini/Downloads/zipgo_ibd_call_logs_info-results.csv");
+		attachment.setPath(FileLocation+"zipgo_ibd_call_logs_info-results.csv");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("zipgo_ibd_call_logs_info-results" + dateFinal + ".csv");
 
@@ -255,7 +263,7 @@ public class KnowlaritycombinedReport {
 		System.out.println("Sending attachement mail..");
 		// Create the attachment
 		EmailAttachment attachment = new EmailAttachment();
-		attachment.setPath("/Users/sandeshkini/Downloads/zipgo_t_15145_call_logs_view-results.csv");
+		attachment.setPath(FileLocation+"zipgo_t_15145_call_logs_view-results.csv");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("zipgo_t_15145_call_logs_view-results" + dateFinal + ".csv");
 		
@@ -314,6 +322,6 @@ public class KnowlaritycombinedReport {
 				// send the email
 				email.send();
 				System.out.println("Sent"+mailSubject);
-//				commit test
+
 	}
 }
