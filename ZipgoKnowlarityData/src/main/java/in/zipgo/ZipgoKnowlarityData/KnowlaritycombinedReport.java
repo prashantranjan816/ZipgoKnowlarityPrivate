@@ -261,6 +261,7 @@ public class KnowlaritycombinedReport {
 		String scrlocation		="./screenshot/"+dateFinal+ScrName+".png";
 
 		System.out.println("Sending attachement mail..");
+		
 		// Create the attachment
 		EmailAttachment attachment = new EmailAttachment();
 		attachment.setPath(FileLocation+"zipgo_t_15145_call_logs_view-results.csv");
